@@ -1,17 +1,28 @@
 import { Component } from "react";
 
 interface UserSearchProps {
-  users: {
-    name: string;
-    age: number;
-  }[]
+  users: User[]
+}
+
+interface User {
+  name: string;
+  age: number;
+}
+
+interface UserSearchState {
+  name: string;
+  user: User | undefined;
 }
 
 class UserSearch extends Component<UserSearchProps> {
-  render() {
-    console.log(this.props.users);
+  state: UserSearchState = {
+    name: '',
+    user: undefined
+  };
 
-    return <div>ciao</div>
+  render() {
+    console.log(this.state.user)
+    return <div>state</div>
   }
 }
 
